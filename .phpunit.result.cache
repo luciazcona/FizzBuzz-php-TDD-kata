@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":254:{a:2:{s:7:"defects";a:0:{}s:5:"times";a:3:{s:53:"Deg540\CleanCodeKata9\Test\ExampleTest::trueAssertion";d:0.014;s:54:"Deg540\CleanCodeKata9\Test\ExampleTest::falseAssertion";d:0.001;s:55:"Deg540\CleanCodeKata9\Test\ExampleTest::equalsAssertion";d:0.001;}}}

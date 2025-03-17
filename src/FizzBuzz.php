@@ -2,7 +2,7 @@
 
 namespace Deg540\CleanCodeKata9;
 
-class Example
+class FizzBuzz
 {
     /**
      * @param $value
