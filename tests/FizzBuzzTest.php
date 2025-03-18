@@ -9,40 +9,55 @@ use PHPUnit\Framework\TestCase;
 
 final class FizzBuzzTest extends TestCase
 {
+    private FizzBuzz $fizzBuzz;
 
-    /**
-     * @test
-     */
-    public function trueAssertion()
+    protected function setUp(): void
     {
-        $example = new FizzBuzz();
+        parent::setUp();
 
-        $integerValue = $example->integerChecker(1);
-
-        $this->assertTrue($integerValue);
+        $this->fizzBuzz = new FizzBuzz();
     }
 
     /**
      * @test
-     */
-    public function falseAssertion()
+     **/
+    //notMultipleOfThreeOrFiveReturnNumber
+    public function notFizzNumberAndNotBuzzNumberReturnNumber(): void
     {
-        $example = new FizzBuzz();
+        $result = $this->fizzBuzz->convert(1);
 
-        $integerValue = $example->integerChecker('1');
+        $this->assertEquals('1', $result);
 
-        $this->assertFalse($integerValue);
     }
 
     /**
      * @test
-     */
-    public function equalsAssertion()
+     **/
+    public function multipleOfFizzNumberReturnsFizz(): void
     {
-        $example = new FizzBuzz();
+        $result = $this->fizzBuzz->convert(12);
 
-        $integerValue = $example->integerChecker(1);
-
-        $this->assertEquals(true, $integerValue);
+        $this->assertEquals('Fizz', $result);
     }
+
+    /**
+     * @test
+     **/
+    public function multipleOfBuzzNumberReturnsBuzz(): void
+    {
+        $result = $this->fizzBuzz->convert(10);
+
+        $this->assertEquals('Buzz', $result);
+    }
+
+    /**
+     * @test
+     **/
+    public function multipleOfFizzNumberAndBuzzNumberReturnsFizzBuzz(): void
+    {
+        $result = $this->fizzBuzz->convert(15);
+
+        $this->assertEquals('FizzBuzz', $result);
+    }
+
 }
